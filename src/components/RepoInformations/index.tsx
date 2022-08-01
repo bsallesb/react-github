@@ -21,7 +21,7 @@ const RepoInformations: React.FC<IRepoInformationsProps> = ({ repository }) => (
       )}
     </div>
     <BorderBottom>
-      {repository.subscribers_count && (
+      {repository.subscribers_count >= 0 && (
         <div className="d-flex text-color-body mb-2">
           <div className="me-3">
             <BsEye size={20} />
@@ -37,7 +37,7 @@ const RepoInformations: React.FC<IRepoInformationsProps> = ({ repository }) => (
           {repository.license.name}
         </div>
       )}
-      {repository.stargazers_count && (
+      {repository.stargazers_count >= 1 && (
         <div className="d-flex text-color-body mb-2">
           <div className="me-3">
             <BsStar size={18} />
@@ -45,7 +45,7 @@ const RepoInformations: React.FC<IRepoInformationsProps> = ({ repository }) => (
           {repository.stargazers_count} stars
         </div>
       )}
-      {repository.forks_count && (
+      {repository.forks_count >= 1 && (
         <div className="d-flex text-color-body mb-2">
           <div className="me-3">
             <TbGitFork size={18} />

@@ -41,21 +41,21 @@ const RepositoryList: React.FC = () => {
           <div className="d-flex text-color-body align-items-center mt-4">
             {repository.language && (
               <div className="d-flex align-items-center me-3">
-                <div className="me-1">
+                <div className="me-1 d-flex align-items-center">
                   <BsFillCircleFill size={13} />
                 </div>
                 {repository.language}
               </div>
             )}
-            {repository.watchers && (
+            {repository.watchers >= 1 && (
               <div className="d-flex align-items-center me-3">
-                <div className="me-1">
+                <div className="me-1 d-flex align-items-center">
                   <BsStar size={18} />
                 </div>
                 {repository.watchers}
               </div>
             )}
-            {repository.forks_count && (
+            {repository.forks_count >= 1 && (
               <div className="d-flex align-items-center me-3">
                 <div className="me-1">
                   <TbGitFork size={18} />
@@ -68,7 +68,7 @@ const RepositoryList: React.FC = () => {
                 className="d-flex align-items-center me-3"
                 key={repository.license.name}
               >
-                <div className="me-1">
+                <div className="me-1 d-flex align-items-center">
                   <FaBalanceScale size={18} />
                 </div>
                 {repository.license.name}

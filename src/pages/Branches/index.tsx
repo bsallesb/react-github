@@ -36,6 +36,8 @@ const Branches: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [username, repositoryName]);
 
+  console.log('repository', repository);
+
   return (
     <Wrapper>
       <Header searchInput />
